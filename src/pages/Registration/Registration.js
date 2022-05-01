@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
+
 const Registration = () => {
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    console.log(user)
     const handleRegister = event => {
         event.preventDefault();
         const name = event.target.name.value;
