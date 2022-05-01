@@ -1,0 +1,15 @@
+.login-section {
+    height: calc(100vh - 59px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edeff5;
+}
+
+.container-form {
+    justify-content: center;
+    background: white;
+    max-width: 450px;
+    padding: 40px;
+    margin: auto;
+}

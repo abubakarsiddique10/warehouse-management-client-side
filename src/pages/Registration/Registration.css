@@ -1,0 +1,28 @@
+.registration-section {
+    height: calc(100vh - 59px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edeff5;
+}
+
+.container-form {
+    justify-content: center;
+    background: white;
+    max-width: 450px;
+    padding: 40px;
+    margin: auto;
+}
+
+.container-form div :first-child {
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 370px) {
+    .container-form div button {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

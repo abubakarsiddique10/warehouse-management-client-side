@@ -1,0 +1,45 @@
+.card button {
+    padding: 8px 30px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card .card-footer {
+    padding: 0;
+    background: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0px 10px 40px rgba(28, 51, 84, 0.07);
+}
+
+.card .card-footer h5 {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.card .sub-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .sub-details .icon {
+    margin-right: 5px;
+    color: #77838F
+}
+
+.card .sub-details .star {
+    color: #FFC78B;
+}
+
+.card:hover img:not(.my-img) {
+    transform: scale(1.1);
+    transition: all .50s;
+}
