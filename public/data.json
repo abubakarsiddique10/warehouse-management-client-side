@@ -33,7 +33,7 @@
         "description": "Learn web development with HTML, CSS, Bootstrap 4, ES6 React and Node"
     },
     {
-        "id": "1",
+        "id": "4",
         "lessons": "5",
         "quantity": "8",
         "minute": "12",
@@ -44,7 +44,7 @@
         "description": "Deeply understand Semantic HTML, CSS, Flexbox, Grid, learn to read the specifications, and more."
     },
     {
-        "id": "2",
+        "id": "5",
         "lessons": "8",
         "quantity": "60",
         "minute": "18",
@@ -55,7 +55,7 @@
         "description": "Get started as a front-end web developer using HTML, CSS, JavaScript, jQuery, and Bootstrap!"
     },
     {
-        "id": "3",
+        "id": "6",
         "lessons": "20",
         "quantity": "70",
         "minute": "20",
