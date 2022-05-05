@@ -3,10 +3,13 @@ import './Phone.css'
 import { Button, Card, Col, } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpenReader, faClock, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from "react-router-dom";
 const Phone = ({ phone }) => {
-    const { name, img, Price, description, phoneName, supplierName, quantity } = phone;
-    const handleCheckOut = () => {
-        console.log('hello')
+    const navigate = useNavigate();
+    const { name, img, Price, description, phoneName, supplierName, quantity, _id } = phone;
+    const handleCheckOut = (id) => {
+        console.log('hello', id);
+        navigate(`/inventory/${id}`);
     }
     return (
         <Col>
@@ -25,7 +28,7 @@ const Phone = ({ phone }) => {
                     </div>
                 </Card.Body>
                 <Card.Footer>
-                    <Button onClick={handleCheckOut}>Stock Update</Button>
+                    <Button onClick={() => handleCheckOut(_id)}>Stock Update</Button>
                     <h5>{Price}</h5>
                 </Card.Footer>
             </Card>

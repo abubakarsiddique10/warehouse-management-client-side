@@ -32,6 +32,7 @@ const Login = () => {
         toast('sent reset password');
     }
 
+
     const navitage = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";

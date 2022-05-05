@@ -19,7 +19,7 @@ const HeroSection = () => {
                                 Learning.</h1>
                         </Col>
                         <Col>
-                            <img className="img-fluid" src={img}></img>
+                            <img className="img-fluid" src="https://i.ibb.co/znmMLHY/banner2-removebg-preview.png"></img>
                         </Col>
                     </Row>
                 </Container>

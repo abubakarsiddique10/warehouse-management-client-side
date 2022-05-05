@@ -9,6 +9,10 @@ import Header from './pages/Shared/Header/Header';
 import NotFoun from './pages/NotFoun/NotFoun';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
 import Loading from './pages/Shared/Loading/Loading';
+import Inventory from './pages/Inventory/Inventory';
+import UpdateQuantity from './pages/UpdateQuantity/UpdateQuantity';
+import ManageInventories from './pages/ManageInventories/ManageInventories';
+import ManageInventory from './pages/ManageInventory/ManageInventory';
 
 function App() {
   return (
@@ -22,10 +26,14 @@ function App() {
             <Blog />
           </RequireAuth>
         } />
+        <Route path='/inventory/:id' element={<Inventory />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
-        <Route path='*' element={<NotFoun />} />
         <Route path='loading' element={<Loading></Loading>} />
+        <Route path='/update' element={<UpdateQuantity />} />
+        <Route path='/ManageInventories' element={<ManageInventories />} />
+        <Route path='/manageInventory' element={<ManageInventory />} />
+        <Route path='*' element={<NotFoun />} />
       </Routes>
     </div>
   );
