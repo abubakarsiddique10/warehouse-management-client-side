@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
-import ManageInventory from "../ManageInventory/ManageInventory";
 import './ManageInventories.css';
+
 const ManageInventories = () => {
     const [phones, setPhones] = useState([]);
     useEffect(() => {
@@ -23,7 +23,7 @@ const ManageInventories = () => {
     return (
         <section>
             <Container>
-                <table className="w-100">
+                {<table className="w-100">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -38,7 +38,7 @@ const ManageInventories = () => {
                     {
                         phones.map(phone => <tbody key={phone._id}>
                             <tr>
-                                <td title={phone._id} >{phone._id?.slice(0, 10) + '...'}</td>
+                                <td title={phone._id} ></td>
                                 <td><img src={phone.img} alt="" /></td>
                                 <td>{phone.phoneName}</td>
                                 <td>{phone.supplierName}</td>
@@ -49,7 +49,7 @@ const ManageInventories = () => {
                             </tr>
                         </tbody>)
                     }
-                </table>
+                </table>}
             </Container>
         </section >
     )

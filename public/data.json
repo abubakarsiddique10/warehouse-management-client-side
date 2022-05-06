@@ -1,50 +1,50 @@
 [
     {
+        "phoneName": "Iphone",
         "quantity": "10",
         "Price": "$30.80",
-        "img": "https://i.ibb.co/gtLRwLQ/iphone.jpg",
-        "phoneName": "Iphone",
         "supplierName": "Anita Mercer",
+        "img": "https://i.ibb.co/gtLRwLQ/iphone.jpg",
         "description": "Released 2021, September 24141g, 7.7mm thickness iOS 15, up to iOS 15.4.1 128GB/256GB/512GB storage, no card slot."
     },
     {
+        "phoneName": "Samsung",
         "quantity": "12",
         "Price": "$50.73",
-        "img": "https://i.ibb.co/k9jgbsM/samsung.jpg",
-        "phoneName": "Samsung",
         "supplierName": "Anita Mercer",
+        "img": "https://i.ibb.co/k9jgbsM/samsung.jpg",
         "description": "Released 2022, March 24 189g, 8.1mm thickness Android 12, One UI 4.1 128GB/256GB storage, microSDXC"
     },
     {
+        "phoneName": "Realme",
         "quantity": "15",
         "Price": "$80.73",
-        "img": "https://i.ibb.co/MnNX4QM/oppo-2.jpg",
-        "phoneName": "Realme",
         "supplierName": "Anita Mercer",
+        "img": "https://i.ibb.co/MnNX4QM/oppo-2.jpg",
         "description": "Released 2022, March 30 188g, 8.2mm thickness Android 12, Realme UI 3.0 128GB/256GB storage, no card slot"
     },
     {
+        "phoneName": "Symphony",
         "quantity": "20",
         "Price": "$30.80",
-        "img": "https://i.ibb.co/ZXTC680/symphony.jpg",
-        "phoneName": "Symphony",
         "supplierName": "Anita Mercer",
+        "img": "https://i.ibb.co/ZXTC680/symphony.jpg",
         "description": "Deeply understand Semantic HTML, CSS, Flexbox, Grid, learn to read the specifications, and more."
     },
     {
+        "phoneName": "Poco",
         "quantity": "25",
         "Price": "$50.73",
-        "img": "https://i.ibb.co/sjRqsYn/poco.jpg",
-        "phoneName": "Poco",
         "supplierName": "Anita Mercer",
+        "img": "https://i.ibb.co/sjRqsYn/poco.jpg",
         "description": "Released 2022, April 28 210g, 8.5mm thickness Android 12, MIUI 13 128GB/256GB storage, no card slot"
     },
     {
+        "phoneName": "Vivo",
         "quantity": "30",
         "Price": "$80.73",
-        "img": "https://i.ibb.co/cJmJQMS/vivo-2.jpg",
-        "phoneName": "Vivo",
         "supplierName": "Anita Mercer",
+        "img": "https://i.ibb.co/cJmJQMS/vivo-2.jpg",
         "description": "Released 2022, April 29 215g / 219g, 9.1mm thickness Android 12, Origin OS Ocean 256GB/512GB storage, no card slot"
     }
 ]

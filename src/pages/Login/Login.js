@@ -1,12 +1,17 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import './Login.css';
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from "../Shared/Loading/Loading";
+
 const Login = () => {
+
+    let navigate = useNavigate();
+    let location = useLocation();
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -15,7 +20,14 @@ const Login = () => {
     const [signInWithFacebook, fbUser] = useSignInWithFacebook(auth);
 
     // sign in with email and password
-    const [signInWithEmailAndPassword, user, loadin, error] = useSignInWithEmailAndPassword(auth)
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    /*  if (error) {
+         return (
+             <div>
+                 <p>Error: {error.message}</p>
+             </div>
+         );
+     } */
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -31,13 +43,10 @@ const Login = () => {
         sendPasswordResetEmail(email);
         toast('sent reset password');
     }
-
-
-    const navitage = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    // send user to the page he/she tried to visite the page
+    let from = location.state.from.pathname || "/";
     if (user) {
-        navitage(from, { replace: true });
+        navigate(from, { replace: true })
     }
 
     return (
@@ -55,8 +64,8 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control ref={passwordRef} type="password" name="password" placeholder="Password" required />
                         </Form.Group>
+                        <p className="mb-0 text-danger">{error && error.message}</p>
                         <p style={{ cursor: 'pointer' }} onClick={handleVarififcation} className="mb-0">Forget Password</p>
-                        <p className="text-danger mb-0">{error?.message}</p>
                         <Button className="w-100 my-3 fs-5" variant="primary" type="submit">
                             Submit
                         </Button>

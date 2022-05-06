@@ -1,8 +1,6 @@
 import React from "react";
 import './Phone.css'
-import { Button, Card, Col, } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookOpenReader, faClock, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { Button, Card, Col, ToastContainer, } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 const Phone = ({ phone }) => {
     const navigate = useNavigate();

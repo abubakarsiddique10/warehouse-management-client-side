@@ -3,3 +3,11 @@ table img {
     height: 60px;
     border-radius: 50%;
 }
+
+table thead th {
+    padding-right: 15px;
+}
+
+table tbody td {
+    padding-right: 15px;
+}

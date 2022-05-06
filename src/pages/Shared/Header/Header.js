@@ -10,19 +10,23 @@ const Header = () => {
     const handleSignOut = () => {
         signOut(auth);
     }
-
     return (
         <header className="header">
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">Web Education</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/">Phone Corner</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/phones">Phone</Nav.Link>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                             <Nav.Link as={Link} to="/ManageInventories">Manage Inventories</Nav.Link>
+                            {
+                                !user ? '' : <div className="d-flex">
+                                    <Nav.Link as={Link} to="/addnewitem">AddItem</Nav.Link>
+                                    <Nav.Link as={Link} to="/myItem">MyItem</Nav.Link>
+                                </div>
+                            }
                         </Nav>
                         <Nav>
                             {
