@@ -10,7 +10,11 @@ const MyItem = () => {
 
     useEffect(() => {
         const email = user?.email;
-        fetch(`http://localhost:5000/order?email=${email}`)
+        fetch(`http://localhost:5000/order?email=${email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+            }
+        })
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user])

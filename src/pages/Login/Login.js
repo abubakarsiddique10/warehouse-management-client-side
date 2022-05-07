@@ -11,6 +11,7 @@ const Login = () => {
 
     let navigate = useNavigate();
     let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -28,6 +29,19 @@ const Login = () => {
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
         event.target.reset();
+
+        fetch('http://localhost:5000/login', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem('accessToken', data.accessToken);
+                navigate(from, { replace: true });
+            })
     };
 
     // send reset password in email
@@ -40,12 +54,6 @@ const Login = () => {
     if (loading) {
         return <Loading />
     }
-    // send user to the page he/she tried to visite the page
-    let from = location.state?.from?.pathname || "/";
-    if (user) {
-        navigate(from, { replace: true })
-    }
-
 
     return (
         <section className="login-section">
