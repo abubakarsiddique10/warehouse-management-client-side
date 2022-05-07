@@ -21,7 +21,7 @@ const Phone = ({ phone }) => {
                             <span>Supplier: {supplierName}</span>
                         </div>
                         <div>
-                            <span>Quantity: {quantity}</span>
+                            <h6>Quantity: {quantity}</h6>
                         </div>
                     </div>
                 </Card.Body>

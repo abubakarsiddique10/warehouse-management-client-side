@@ -1,25 +1,36 @@
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 const AddNewItem = () => {
+    const [user] = useAuthState(auth);
     const handleAddItem = event => {
         event.preventDefault();
-        const phoneName = event.target.name.value;
-        const quantity = event.target.quantity.value;
-        const Price = event.target.price.value;
-        const supplier = event.target.supplier.value;
-        const img = event.target.image.value;
-        const description = event.target.description.value;
-
-        const product = { img, phoneName, description, supplier, quantity, Price, };
+        const product = {
+            email: user.email,
+            phoneName: event.target.name.value,
+            quantity: event.target.quantity.value,
+            Price: event.target.price.value,
+            supplier: event.target.supplier.value,
+            img: event.target.image.value,
+            description: event.target.description.value
+        }
 
         // send data to server
-        fetch(('http://localhost:5000/products'), {
+        fetch(('http://localhost:5000/order'), {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
             body: JSON.stringify(product),
         })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast('Your order is booked')
+                }
+            })
     }
     return (
         <div>
@@ -30,6 +41,11 @@ const AddNewItem = () => {
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Phone Name</Form.Label>
                             <Form.Control type="text" name="name" placeholder="Phone name" required />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Your Email</Form.Label>
+                            <Form.Control type="text" value={user && user.email} readOnly disabled required />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -57,7 +73,7 @@ const AddNewItem = () => {
                         </Form.Group>
 
                         <Button className="w-100 my-3 fs-5" variant="primary" type="submit">
-                            Submit
+                            Add Item
                         </Button>
                     </Form>
                 </div>

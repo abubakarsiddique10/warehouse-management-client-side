@@ -9,15 +9,18 @@ const ManageInventories = () => {
             .then(data => setPhones(data));
     }, []);
     const handleDelete = id => {
-        const url = `http://localhost:5000/products/${id}`;
-        fetch(url, {
-            method: "DELETE",
-        })
-            .then(res => res.json())
-            .then(data => {
-                const remaining = phones.filter(phone => phone._id !== id);
-                setPhones(remaining)
+        const confirm = window.confirm('Are you delete item');
+        if (confirm) {
+            const url = `http://localhost:5000/products/${id}`;
+            fetch(url, {
+                method: "DELETE",
             })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = phones.filter(phone => phone._id !== id);
+                    setPhones(remaining)
+                })
+        }
     }
     const navigate = useNavigate();
     const handleNavigate = () => {

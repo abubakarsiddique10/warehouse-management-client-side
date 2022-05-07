@@ -21,8 +21,9 @@ const Header = () => {
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                             <Nav.Link as={Link} to="/ManageInventories">Manage Inventories</Nav.Link>
+                            <Nav.Link as={Link} to="/customers">Customers</Nav.Link>
                             {
-                                !user ? '' : <div className="d-flex">
+                                user && <div className="d-flex">
                                     <Nav.Link as={Link} to="/addnewitem">AddItem</Nav.Link>
                                     <Nav.Link as={Link} to="/myItem">MyItem</Nav.Link>
                                 </div>

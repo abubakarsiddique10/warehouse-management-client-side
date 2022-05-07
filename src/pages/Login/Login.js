@@ -7,7 +7,6 @@ import auth from "../../firebase.init";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from "../Shared/Loading/Loading";
-
 const Login = () => {
 
     let navigate = useNavigate();
@@ -21,13 +20,8 @@ const Login = () => {
 
     // sign in with email and password
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
-    /*  if (error) {
-         return (
-             <div>
-                 <p>Error: {error.message}</p>
-             </div>
-         );
-     } */
+
+
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -43,11 +37,15 @@ const Login = () => {
         sendPasswordResetEmail(email);
         toast('sent reset password');
     }
+    if (loading) {
+        return <Loading />
+    }
     // send user to the page he/she tried to visite the page
-    let from = location.state.from.pathname || "/";
+    let from = location.state?.from?.pathname || "/";
     if (user) {
         navigate(from, { replace: true })
     }
+
 
     return (
         <section className="login-section">
