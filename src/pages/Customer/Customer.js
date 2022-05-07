@@ -21,28 +21,28 @@ const Customer = () => {
         event.target.reset();
     }
     return (
-        <section style={{ paddingTop: '70px', paddingBottom: '80px' }}>
+        <section style={{ paddingTop: '70px', paddingBottom: '80px', background: '#edeff5', }}>
             <Container>
                 <h1 className="text-center">Add Customer</h1>
                 <Form className="w-75 mx-auto" onSubmit={handleSubmit}>
                     <Form.Group className="mb-3">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control name="name" type="text" placeholder="Name" />
+                        <Form.Control name="name" type="text" placeholder="Name" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control name="email" type="email" placeholder="Email" />
+                        <Form.Control name="email" type="email" placeholder="Email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Phone</Form.Label>
-                        <Form.Control name="phone" type="number" placeholder="Phone" />
+                        <Form.Control name="phone" type="number" placeholder="Phone" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Quantity</Form.Label>
-                        <Form.Control name="quantity" type="number" placeholder="Quantity" />
+                        <Form.Control name="quantity" type="number" placeholder="Quantity" required />
                     </Form.Group>
 
                     <div className="text-center">

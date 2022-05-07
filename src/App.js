@@ -10,6 +10,7 @@ import Login from './pages/Login/Login';
 import MyItem from './pages/MyItem/MyItem';
 import NotFoun from './pages/NotFoun/NotFoun';
 import ManageInventories from './pages/Phones/ManageInventories';
+import RecentProducts from './pages/RecentProducts/RecentProducts';
 import Registration from './pages/Registration/Registration';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
 import Header from './pages/Shared/Header/Header';
@@ -34,6 +35,7 @@ function App() {
         <Route path='/update/:id' element={<UpdateQuantity />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='customers' element={<Customers />} />
+        <Route path='/recentProducts' element={<RecentProducts />} />
         <Route path='*' element={<NotFoun />} />
       </Routes>
       <ToastContainer />

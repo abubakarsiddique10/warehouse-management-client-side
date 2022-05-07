@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import img from '../../images/phone.jpg'
 import Phone from "../../Phones/Phone/Phone";
+import RecentProducts from "../../RecentProducts/RecentProducts";
 import Loading from "../../Shared/Loading/Loading";
 const HeroSection = () => {
     const [user, loading] = useAuthState(auth);
@@ -42,6 +43,7 @@ const HeroSection = () => {
                     </Row>
                 </Container>
             </section>
+            <RecentProducts></RecentProducts>
         </>
     )
 }
