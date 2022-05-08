@@ -17,7 +17,7 @@ const AddNewItem = () => {
             description: event.target.description.value
         }
         // send data to server
-        fetch(('http://localhost:5000/order'), {
+        fetch(('https://powerful-falls-87605.herokuapp.com/order'), {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -27,7 +27,8 @@ const AddNewItem = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    toast('Your order is booked')
+                    toast('Your order is booked');
+                    event.target.reset()
                 }
             })
     }

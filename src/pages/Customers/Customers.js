@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap";
 const Customers = () => {
     const [customers, setCustomers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/customers')
+        fetch('https://powerful-falls-87605.herokuapp.com/customers')
             .then(res => res.json())
             .then(data => setCustomers(data))
     }, []);

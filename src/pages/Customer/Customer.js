@@ -11,7 +11,7 @@ const Customer = () => {
             phone: event.target.phone.value,
             quantity: event.target.quantity.value,
         }
-        fetch('http://localhost:5000/customer', {
+        fetch('https://powerful-falls-87605.herokuapp.com/customer', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json',

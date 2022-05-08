@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap";
 const RecentProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/recents')
+        fetch('https://powerful-falls-87605.herokuapp.com/recents')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

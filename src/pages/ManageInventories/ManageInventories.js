@@ -5,12 +5,12 @@ import './ManageInventories.css';
 const ManageInventories = () => {
     const [phones, setPhones] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://powerful-falls-87605.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setPhones(data));
     }, []);
     const handleDelete = id => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://powerful-falls-87605.herokuapp.com/products/${id}`;
         fetch(url, {
             method: "DELETE",
         })

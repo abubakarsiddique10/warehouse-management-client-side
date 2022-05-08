@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 const ManageInventories = () => {
     const [phones, setPhones] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://powerful-falls-87605.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setPhones(data));
     }, []);
     const handleDelete = id => {
         const confirm = window.confirm('Are you delete item');
         if (confirm) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://powerful-falls-87605.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

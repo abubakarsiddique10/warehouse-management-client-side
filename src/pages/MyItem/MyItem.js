@@ -2,28 +2,35 @@ import React, { useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import './MyItem.css';
 
 const MyItem = () => {
     const [user, loading] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
-    console.log(user)
+    console.log(user?.email)
 
     useEffect(() => {
         const email = user?.email;
-        fetch(`http://localhost:5000/order?email=${email}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-            }
-        })
-            .then(res => res.json())
-            .then(data => setOrders(data))
+        if (email) {
+            fetch(`https://powerful-falls-87605.herokuapp.com/order?email=${email}`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+                }
+            })
+                .then(res => res.json())
+                .then(data => setOrders(data))
+        }
     }, [user])
+
+    if (loading) {
+        return <Loading />
+    }
 
     const hendleDelete = id => {
         const confirm = window.confirm('Are you delete item');
         if (confirm) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://powerful-falls-87605.herokuapp.com/orders/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -53,7 +60,7 @@ const MyItem = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map(order => <tr>
+                            orders.map(order => <tr key={order._id}>
                                 <td>{order._id}</td>
                                 <td><img src={order.img} alt="" /></td>
                                 <td>{order.phoneName}</td>

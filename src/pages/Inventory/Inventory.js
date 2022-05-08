@@ -7,7 +7,7 @@ const Inventory = () => {
     const [products, setProducts] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://powerful-falls-87605.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [products]);
@@ -15,7 +15,7 @@ const Inventory = () => {
     const hendleUpdate = id => {
         quantity--;
         const updateQuantity = { quantity };
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://powerful-falls-87605.herokuapp.com/products/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -29,7 +29,7 @@ const Inventory = () => {
         let quantity = parseInt(event.target.number.value);
         const updateQuantity = { quantity };
         console.log(quantity)
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://powerful-falls-87605.herokuapp.com/products/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

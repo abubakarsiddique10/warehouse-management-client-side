@@ -11,7 +11,7 @@ const HeroSection = () => {
     const [phones, setPhones] = useState([]);
     const slicePhone = phones.slice(0, 6)
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://powerful-falls-87605.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setPhones(data));
     }, []);
