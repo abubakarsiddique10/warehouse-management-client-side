@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import './Login.css';
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,13 +15,13 @@ const Login = () => {
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
+
     // sign in with google and facebook
     const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
     const [signInWithFacebook, fbUser] = useSignInWithFacebook(auth);
 
     // sign in with email and password
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
-
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -50,12 +50,14 @@ const Login = () => {
         sendPasswordResetEmail(email);
         toast('sent reset password');
     }
+
     if (user || googleUser || fbUser) {
         navigate(from, { replace: true });
     }
     if (loading) {
         return <Loading />
     }
+
     return (
         <section className="login-section">
             <Container className="">

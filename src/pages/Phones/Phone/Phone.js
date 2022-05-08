@@ -3,6 +3,7 @@ import './Phone.css'
 import { Button, Card, Col, ToastContainer, } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 const Phone = ({ phone }) => {
+
     const navigate = useNavigate();
     const { name, img, Price, description, phoneName, supplierName, quantity, _id } = phone;
     const handleCheckOut = (id) => {

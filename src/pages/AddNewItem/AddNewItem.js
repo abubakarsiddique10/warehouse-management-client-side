@@ -16,7 +16,6 @@ const AddNewItem = () => {
             img: event.target.image.value,
             description: event.target.description.value
         }
-
         // send data to server
         fetch(('http://localhost:5000/order'), {
             method: 'POST',

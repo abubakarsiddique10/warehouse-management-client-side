@@ -3,11 +3,3 @@ table img {
     height: 60px;
     border-radius: 50%;
 }
-
-/* table thead th:not(:last-child) {
-    padding-right: 15px;
-}
-
-table tbody td:not(:last-child) {
-    padding-right: 15px;
-} */

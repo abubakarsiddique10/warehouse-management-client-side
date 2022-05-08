@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Row, Button, Table } from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
 const RecentProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -36,31 +36,6 @@ const RecentProducts = () => {
                         </tbody>
                     </Table>
                 </div>
-                {/* <Row xs={1} md={2} lg={3} className="g-4 padding pt-0">
-                    {
-                        products.map(product => <Col>
-                            <Card className="h-100 border-0">
-                                <Card.Img variant="top" src={product.img} />
-                                <Card.Body>
-                                    <Card.Title>{product.phoneName}</Card.Title>
-                                    <Card.Text>{product.description}</Card.Text>
-                                    <div className="sub-details">
-                                        <div>
-                                            <span>Supplier: {product.supplierName}</span>
-                                        </div>
-                                        <div>
-                                            <h6>Quantity: {product.quantity}</h6>
-                                        </div>
-                                    </div>
-                                </Card.Body>
-                                <Card.Footer>
-                                    <Button >Stock Update</Button>
-                                    <h5>{product.Price}</h5>
-                                </Card.Footer>
-                            </Card>
-                        </Col>)
-                    }
-                </Row> */}
             </Container>
         </section>
     )

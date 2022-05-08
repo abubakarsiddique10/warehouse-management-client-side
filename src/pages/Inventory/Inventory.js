@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import './Inventory.css';
 const Inventory = () => {
     const { id } = useParams();
     const [products, setProducts] = useState({});
-    /*  useEffect(() => {
-         const url = `http://localhost:5000/products/${id}`;
-         fetch(url)
-             .then(res => res.json())
-             .then(data => setProducts(data))
-     }, []); */
 
     useEffect(() => {
         fetch(`http://localhost:5000/products/${id}`)

@@ -3,7 +3,6 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
-import img from '../../images/phone.jpg'
 import Phone from "../../Phones/Phone/Phone";
 import RecentProducts from "../../RecentProducts/RecentProducts";
 import Loading from "../../Shared/Loading/Loading";
@@ -24,15 +23,6 @@ const HeroSection = () => {
             <section>
                 <Container>
                     <img className="img-fluid w-100" src="https://i.ibb.co/RcfkKqY/banner1.jpg"></img>
-                    {/*  {<Row className='padding'>
-                        { <Col className="d-flex align-items-center">
-                            <h1>Experience Better underline
-                                Learning.</h1>
-                        </Col> } 
-                        <Col>
-                            
-                        </Col>
-                    </Row>} */}
                 </Container>
             </section>
             <section style={{ background: '#edeff5', paddingTop: '70px', paddingBottom: '80px' }}>

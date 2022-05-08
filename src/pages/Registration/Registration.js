@@ -16,7 +16,6 @@ const Registration = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-    console.log(user)
 
     const handleRegister = event => {
         event.preventDefault();
@@ -26,11 +25,14 @@ const Registration = () => {
         createUserWithEmailAndPassword(email, password);
         event.target.reset();
         toast('send email verification');
-        navigate('/')
     }
     if (loading) {
         return <Loading />
     }
+    if (user) {
+        navigate('/')
+    }
+
     return (
         <section className="registration-section">
             <Container>

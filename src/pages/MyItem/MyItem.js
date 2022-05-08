@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import Loading from "../Shared/Loading/Loading";
 import './MyItem.css';
+
 const MyItem = () => {
     const [user, loading] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
@@ -20,8 +20,6 @@ const MyItem = () => {
             .then(data => setOrders(data))
     }, [user])
 
-
-
     const hendleDelete = id => {
         const confirm = window.confirm('Are you delete item');
         if (confirm) {
@@ -34,7 +32,6 @@ const MyItem = () => {
                     setOrders(remaining)
                 })
         }
-
     }
 
     return (
