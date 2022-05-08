@@ -7,12 +7,12 @@ const Customers = () => {
             .then(res => res.json())
             .then(data => setCustomers(data))
     }, []);
-    console.log(customers)
+
     return (
         <section>
             <Container>
                 <h1 className="my-4">Customers: {customers.length}</h1>
-                <Table className="w-100">
+                <Table responsive>
                     <thead>
                         <tr className="bg-dark text-white">
                             <th>NAME</th>
@@ -29,7 +29,6 @@ const Customers = () => {
                                 <td>{customer.email}</td>
                                 <td>{customer.phone}</td>
                                 <td>{customer.quantity}</td>
-
                                 <td>{customer._id}</td>
                             </tr>)
                         }

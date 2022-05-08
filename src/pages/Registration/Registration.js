@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import './Registration.css';
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from "../Shared/Loading/Loading";
 
 const Registration = () => {
+    const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
         user,
@@ -15,6 +17,7 @@ const Registration = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     console.log(user)
+
     const handleRegister = event => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -22,9 +25,12 @@ const Registration = () => {
         const password = event.target.password.value;
         createUserWithEmailAndPassword(email, password);
         event.target.reset();
-        toast('send email verification')
+        toast('send email verification');
+        navigate('/')
     }
-
+    if (loading) {
+        return <Loading />
+    }
     return (
         <section className="registration-section">
             <Container>

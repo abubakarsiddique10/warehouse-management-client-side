@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import img from '../../images/phone.jpg'
 import Phone from "../../Phones/Phone/Phone";
@@ -42,6 +43,7 @@ const HeroSection = () => {
                             slicePhone.map(phone => <Phone key={phone.id} phone={phone} />)
                         }
                     </Row>
+                    <Link to='/ManageInventories'><Button className="d-block w-25 mx-auto mt-4">Manage Inventories</Button></Link>
                 </Container>
             </section>
             <RecentProducts></RecentProducts>

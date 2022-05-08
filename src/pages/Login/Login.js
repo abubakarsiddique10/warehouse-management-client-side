@@ -50,7 +50,7 @@ const Login = () => {
         sendPasswordResetEmail(email);
         toast('sent reset password');
     }
-    if (user) {
+    if (user || googleUser || fbUser) {
         navigate(from, { replace: true });
     }
     if (loading) {

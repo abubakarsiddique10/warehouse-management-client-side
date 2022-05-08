@@ -12,28 +12,30 @@ const RecentProducts = () => {
         <section style={{ paddingTop: '70px', paddingBottom: '80px' }}>
             <Container>
                 <h1 className="text-center mb-4">Recent Products</h1>
-                <Table className="w-100">
-                    <thead>
-                        <tr className="bg-dark text-white">
-                            <th>IMAGE</th>
-                            <th>PHONE</th>
-                            <th>AMOUNT</th>
-                            <th>QUANTITY</th>
-                            <th>STATUS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            products.map(product => <tr key={product._id}>
-                                <td><img src={product.img} alt="" /></td>
-                                <td>{product.phoneName}</td>
-                                <td>{product.Price}</td>
-                                <td>{product.quantity}</td>
-                                <td>Active</td>
-                            </tr>)
-                        }
-                    </tbody>
-                </Table>
+                <div className="w-100">
+                    <Table responsive className="">
+                        <thead>
+                            <tr className="bg-dark text-white">
+                                <th>IMAGE</th>
+                                <th>PHONE</th>
+                                <th>AMOUNT</th>
+                                <th>QUANTITY</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                products.map(product => <tr key={product._id}>
+                                    <td><img src={product.img} alt="" /></td>
+                                    <td>{product.phoneName}</td>
+                                    <td>{product.Price}</td>
+                                    <td>{product.quantity}</td>
+                                    <td>Active</td>
+                                </tr>)
+                            }
+                        </tbody>
+                    </Table>
+                </div>
                 {/* <Row xs={1} md={2} lg={3} className="g-4 padding pt-0">
                     {
                         products.map(product => <Col>
