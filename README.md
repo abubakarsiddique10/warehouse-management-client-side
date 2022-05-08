@@ -1,8 +1,13 @@
 # Phone Corner
 
-## [Create React App](https://github.com/facebook/create-react-app).
+## [Client Side Live Link](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Website features
+- HTML5
+- REACT BOOTSTRAP
+- REACT.JS
+- REACT FIREBASE HOOKS
+- MONGO_DB
 
 In the project directory, you can run:
 
