@@ -1,6 +1,6 @@
 # Phone Corner
 
-## [Client Side Live Link](https://github.com/facebook/create-react-app).
+## [Client Side Live Link](https://phone-corner-e38c5.web.app/).
 
 ## Website features
 - HTML5
