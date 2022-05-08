@@ -40,7 +40,6 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem('accessToken', data.accessToken);
-                navigate(from, { replace: true });
             })
     };
 
@@ -51,10 +50,12 @@ const Login = () => {
         sendPasswordResetEmail(email);
         toast('sent reset password');
     }
+    if (user) {
+        navigate(from, { replace: true });
+    }
     if (loading) {
         return <Loading />
     }
-
     return (
         <section className="login-section">
             <Container className="">

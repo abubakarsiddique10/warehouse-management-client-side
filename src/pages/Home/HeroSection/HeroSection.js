@@ -20,17 +20,18 @@ const HeroSection = () => {
     }
     return (
         <>
-            <section className="border">
+            <section>
                 <Container>
-                    <Row md={1} lg={2} className='padding'>
-                        <Col className="d-flex align-items-center">
+                    <img className="img-fluid w-100" src="https://i.ibb.co/RcfkKqY/banner1.jpg"></img>
+                    {/*  {<Row className='padding'>
+                        { <Col className="d-flex align-items-center">
                             <h1>Experience Better underline
                                 Learning.</h1>
-                        </Col>
+                        </Col> } 
                         <Col>
-                            <img className="img-fluid" src="https://i.ibb.co/znmMLHY/banner2-removebg-preview.png"></img>
+                            
                         </Col>
-                    </Row>
+                    </Row>} */}
                 </Container>
             </section>
             <section style={{ background: '#edeff5', paddingTop: '70px', paddingBottom: '80px' }}>

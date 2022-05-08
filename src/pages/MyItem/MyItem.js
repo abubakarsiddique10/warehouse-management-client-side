@@ -7,6 +7,7 @@ import './MyItem.css';
 const MyItem = () => {
     const [user, loading] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
+    console.log(user)
 
     useEffect(() => {
         const email = user?.email;
@@ -19,9 +20,8 @@ const MyItem = () => {
             .then(data => setOrders(data))
     }, [user])
 
-    if (loading) {
-        return <Loading />
-    }
+
+
     const hendleDelete = id => {
         const confirm = window.confirm('Are you delete item');
         if (confirm) {

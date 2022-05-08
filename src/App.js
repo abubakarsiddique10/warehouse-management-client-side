@@ -13,6 +13,7 @@ import ManageInventories from './pages/Phones/ManageInventories';
 import RecentProducts from './pages/RecentProducts/RecentProducts';
 import Registration from './pages/Registration/Registration';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
+import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 import UpdateQuantity from './pages/UpdateQuantity/UpdateQuantity';
 
@@ -38,6 +39,7 @@ function App() {
         <Route path='/recentProducts' element={<RecentProducts />} />
         <Route path='*' element={<NotFoun />} />
       </Routes>
+      <Footer />
       <ToastContainer />
     </div>
   );
